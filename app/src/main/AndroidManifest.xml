@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.userlist">
-    <uses-permission android:name="android.permission.INTERNET"/>
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -24,9 +26,13 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <!--        <meta-data-->
+        <!--            android:name="githubToken"-->
+        <!--            android:value="${GITHUB_TOKEN}" />-->
         <meta-data
             android:name="githubToken"
-            android:value="${GITHUB_TOKEN}" />
+            android:value="${YOUR_GITHUB_TOKEN}" />  <!--  If you do not have token please leave the value empty but  GitHub server will limit your api request times />-->
+
     </application>
 
 </manifest>
