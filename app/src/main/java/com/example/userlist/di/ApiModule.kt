@@ -8,9 +8,7 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
-/**
- * Created by BMHenry at 9/8/2021
- */
+
 @Module
 @InstallIn(SingletonComponent::class)
 class ApiModule {

@@ -7,9 +7,6 @@ import com.example.userlist.other.UseCaseResult
 import com.example.userlist.remote.UserService
 import javax.inject.Inject
 
-/**
- * Created by BMHenry at 9/8/2021
- */
 
 class UserRepsitoryImp @Inject constructor(
     private val userService: UserService,

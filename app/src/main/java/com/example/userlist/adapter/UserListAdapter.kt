@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.userlist.databinding.ItemUserBinding
 import com.example.userlist.model.User
 
-/**
- * Created by BMHenry at 9/8/2021
- */
+
 class UserListAdapter(private val itemclickCallback: (String) -> Unit) :
     ListAdapter<User, UserListAdapter.ViewHolder>(DiffCallBack())  {
 

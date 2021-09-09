@@ -6,9 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 
-/**
- * Created by BMHenry at 9/9/2021
- */
+
 object Util {
     @SuppressLint("NewApi")
     fun isOnline(context: Context): Boolean {

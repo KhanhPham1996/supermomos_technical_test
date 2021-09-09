@@ -7,9 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.userlist.R
 
-/**
- * Created by BMHenry at 9/8/2021
- */
+
 @BindingAdapter("imgeURL")
 fun loadImageUrl(view: View, url: String?){
     if (!url.isNullOrEmpty() && (view is ImageView)) {

@@ -5,9 +5,6 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
-/**
- * Created by BMHenry at 9/8/2021
- */
 @Parcelize
 @Entity(tableName = "tb_user_entity")
 data class User(

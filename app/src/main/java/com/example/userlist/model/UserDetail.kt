@@ -1,13 +1,7 @@
 package com.example.userlist.model
 
-import android.os.Parcelable
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
-/**
- * Created by BMHenry at 9/8/2021
- */
+
 
 data class UserDetail(
     @SerializedName("avatar_url") var avatarUrl : String,

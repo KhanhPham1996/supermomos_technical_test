@@ -7,9 +7,6 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
-/**
- * Created by BMHenry at 9/8/2021
- */
 @Module
 @InstallIn(SingletonComponent::class)
 interface RepositoryModule {
