@@ -25,10 +25,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-        <!--        <meta-data-->
-        <!--            android:name="githubToken"-->
-        <!--            android:value="${GITHUB_TOKEN}" />-->
+        
         <meta-data
             android:name="githubToken"
             android:value="${YOUR_GITHUB_TOKEN}" />  <!--  If you do not have token please leave the value empty but  GitHub server will limit your api request times />-->
