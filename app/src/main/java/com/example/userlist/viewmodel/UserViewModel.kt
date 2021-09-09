@@ -90,7 +90,9 @@ class UserViewModel @Inject constructor(private val repository: UserRepository) 
                 showLoading.value = false
 
             }
+        } else {
+            showLoading.value = false
+            errorMessage.value = "Please check the internet connection"
         }
-        else    errorMessage.value = "Please check the internet connection"
     }
 }
