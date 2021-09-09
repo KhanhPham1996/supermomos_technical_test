@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="userDeail"
+            type="com.example.userlist.model.UserDetail" />
+        <variable
+            name="viewModel"
+            type="com.example.userlist.viewmodel.UserViewModel" />
+    </data>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.UserDetailFragment">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidline30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidline45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.38" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_nice_city"
+                app:layout_constraintBottom_toBottomOf="@id/guidline30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+
+                android:id="@+id/toolbar_list_user"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:clipToPadding="false"
+                android:elevation="5dp"
+                android:paddingHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/profile"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:padding="@dimen/margin_5"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                app:civ_border_width="5dp"
+                app:civ_border_color="@color/white"
+                android:id="@+id/img_ava"
+                imgeURL="@{userDeail.avatarUrl}"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/img_empty_imgage"
+                app:layout_constraintBottom_toBottomOf="@id/guidline45"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/margin_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_ava">
+
+                <LinearLayout
+                    android:id="@+id/linear_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@{userDeail.name}"
+                        android:textColor="@color/blue"
+                        tools:text="Luis Martin" />
+
+                    <TextView
+                        android:layout_marginTop="@dimen/margin_5"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@{userDeail.location}"
+                        android:textColor="@color/blue"
+                        tools:text="Location" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:background="@color/lightGray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linear_name" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:paddingHorizontal="25dp"
+                    android:id="@+id/constraint_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.555"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_1">
+
+                    <LinearLayout
+                        android:id="@+id/follower_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/following_count"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="@{Integer.toString(userDeail.followers)}"
+                            android:textColor="@color/blue"
+                            tools:text="289" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="@string/followers"
+                            android:textColor="@color/blue"
+                            app:layout_constraintEnd_toEndOf="@id/follower_count"
+                            app:layout_constraintStart_toStartOf="@id/follower_count"
+                            app:layout_constraintTop_toBottomOf="@id/follower_count" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintEnd_toStartOf="@id/repos_count"
+                        app:layout_constraintStart_toEndOf="@+id/follower_count"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/following_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+                        <TextView
+                            android:layout_gravity="center"
+                            style="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@{Integer.toString(userDeail.following)}"
+                            android:textColor="@color/blue"
+                            tools:text="777" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="@string/followeing"
+                            android:textColor="@color/blue"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/following_count"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/repos_count"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+
+                            style="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@{Integer.toString(userDeail.publicRepos)}"
+                            android:textColor="@color/blue"
+                            tools:text="54" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@string/followeing"
+                            android:textAlignment="center"
+                            android:textColor="@color/blue"
+                            />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:background="@color/lightGray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraint_info" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_2">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bio"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{userDeail.bio}"
+                        android:textColor="@color/lightGray"
+                        tools:text="@string/bio" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:visibility="@{viewModel.showLoading ? View.VISIBLE : View.GONE}"
+                app:indicatorColor="@color/lightGray"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:indeterminate="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</layout>
