@@ -68,10 +68,12 @@ class ListUserFragment : Fragment() {
     }
 
     private fun onSwipeRefresh() {
-       userViewModel.getUserList(requireContext(),false)
+        userViewModel.getUserList(requireContext(), false)
         ádasdasdsad
 
         // checkin nhanh khoa
+
+        // Khanh dep trai
     }
 
     private fun fetchDataFromServer() {
