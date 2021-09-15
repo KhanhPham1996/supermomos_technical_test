@@ -71,7 +71,7 @@ class ListUserFragment : Fragment() {
         userViewModel.getUserList(requireContext(), false)
         ádasdasdsad
 
-        // checkin nhanh khoa
+        // checkin nhanh khoa 3
 
         // Khanh dep trai
         // Khanh dep trai 2
