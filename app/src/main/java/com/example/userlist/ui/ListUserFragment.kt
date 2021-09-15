@@ -70,6 +70,7 @@ class ListUserFragment : Fragment() {
 
     private fun onSwipeRefresh() {
        userViewModel.getUserList(requireContext(),false)
+        ssss
     }
 
     private fun fetchDataFromServer() {
