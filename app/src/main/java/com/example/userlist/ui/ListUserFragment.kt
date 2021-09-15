@@ -74,6 +74,7 @@ class ListUserFragment : Fragment() {
         // checkin nhanh khoa
         // checkin nhanh khoa 2
         // Khanh dep trai
+        // Khanh dep trai 2
     }
 
     private fun fetchDataFromServer() {
